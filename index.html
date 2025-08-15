@@ -565,7 +565,7 @@
           max-width: 350px;
         }
       }
-    </script>
+    </style>
   </head>
   <body>
     <header class="cover-header">
@@ -811,7 +811,7 @@
       accordionHeaders.forEach((header) => {
         header.addEventListener('click', () => {
           const content = header.nextElementSibling;
-          const icon = header.querySelector('.accordion-icon');
+          const icon = header.querySelector('-');
 
           if (content.style.maxHeight) {
             content.style.maxHeight = null;
@@ -824,10 +824,11 @@
               item.textContent = '+';
             });
             content.style.maxHeight = content.scrollHeight + 'px';
-            icon.textContent = '–';
+            icon.textContent = '-'; // Línea corregida
           }
         });
       });
     </script>
   </body>
 </html>
+
