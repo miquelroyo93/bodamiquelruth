@@ -156,7 +156,6 @@
         flex-direction: column;
         gap: 15px;
         margin-top: 30px;
-        
       }
 
       .rsvp-button,
@@ -189,6 +188,7 @@
         gap: 40px;
         max-width: 1200px;
         margin: 0 auto;
+        flex-wrap: wrap; /* Añadido para que los elementos se envuelvan */
       }
 
       .form-image {
@@ -281,8 +281,8 @@
       .iban-section {
         position: relative;
         width: 100%;
-        margin-top: px;
-        height: 700px;
+        padding: 50px 0; /* Ajustado para hacerlo más flexible */
+        min-height: 400px; /* Altura mínima para asegurar visibilidad */
         overflow: hidden;
       }
 
@@ -365,7 +365,7 @@
         height: 250px;
         object-fit: contain;
         position: absolute;
-        z-index: 1; /* Para que esté por encima de otros elementos si es necesario */
+        z-index: 1;
       }
 
       .faq-image-left {
@@ -442,7 +442,7 @@
       .accommodation-grid {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Añadido para que las tarjetas se envuelvan */
         gap: 30px;
         max-width: 1200px;
         margin: 0 auto;
@@ -477,7 +477,95 @@
         font-size: 1em;
         margin-top: 20px;
       }
-    </style>
+
+      /* --- MEDIA QUERIES PARA RESPONSIVE --- */
+      @media (max-width: 768px) {
+        .couple-name {
+          font-size: 3em;
+        }
+
+        .photo-grid img {
+          width: 150px;
+          height: 150px;
+        }
+
+        .tagline {
+          font-size: 3em;
+          top: -30px; /* Ajuste de posición para móviles */
+        }
+
+        .details-card {
+          flex-direction: column; /* Apila los elementos en móviles */
+          padding: 20px;
+        }
+
+        .details-photo {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .details-content {
+          width: 100%;
+        }
+
+        .details-card h2 {
+          font-size: 3em;
+        }
+
+        .details-card h3 {
+          font-size: 1.5em;
+        }
+
+        .details-card p {
+          font-size: 2em;
+        }
+
+        .form-image-container {
+          flex-direction: column; /* Apila los elementos */
+          gap: 20px;
+        }
+
+        .form-image {
+          position: relative;
+          top: 0;
+          left: 0;
+          width: 50%; /* Ocupa la mitad del ancho del contenedor */
+        }
+
+        .form-wrapper {
+          width: 100%;
+        }
+
+        .iban-title,
+        .iban-title-font {
+          font-size: 2.5em; /* Tamaño de fuente más pequeño para móviles */
+        }
+
+        .iban-text,
+        .iban-number {
+          font-size: 1.5em;
+        }
+
+        .faq-image-left,
+        .faq-image-right {
+          display: none; /* Oculta las imágenes para evitar problemas de diseño */
+        }
+
+        .faq-title {
+          font-size: 3em;
+        }
+
+        .accordion {
+          max-width: 100%;
+        }
+
+        .accommodation-card {
+          width: 100%; /* Las tarjetas ocupan todo el ancho en móviles */
+          max-width: 350px;
+        }
+      }
+    </script>
   </head>
   <body>
     <header class="cover-header">
