@@ -612,7 +612,7 @@
 
           <div class="buttons-container">
             <a
-              href="https://www.google.com/maps/search/?api=1&query=Hacienda+la+Membrilleja+Puertollano"
+              href="https://maps.google.com/?cid=7982993158720468828&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ"
               class="localizacion-button"
               target="_blank"
               >Localización</a
@@ -811,7 +811,7 @@
       accordionHeaders.forEach((header) => {
         header.addEventListener('click', () => {
           const content = header.nextElementSibling;
-          const icon = header.querySelector('.accordion-icon');;
+          const icon = header.querySelector('.accordion-icon');
 
           if (content.style.maxHeight) {
             content.style.maxHeight = null;
@@ -824,7 +824,7 @@
               item.textContent = '+';
             });
             content.style.maxHeight = content.scrollHeight + 'px';
-            icon.textContent = '-'; // Línea corregida
+            icon.textContent = '-';
           }
         });
       });
