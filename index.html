@@ -473,8 +473,13 @@
 
       /* --- MEDIA QUERIES PARA RESPONSIVE --- */
       @media (max-width: 768px) {
+        body {
+          padding: 0 10px;
+        }
+        
         .couple-name {
-          font-size: 3em;
+          font-size: 2.5em; /* Ajuste de tamaño */
+          margin: 0 10px;
         }
 
         .photo-grid img {
@@ -488,11 +493,16 @@
           white-space: nowrap;
         }
 
+        .details-section {
+          padding: 50px 0;
+        }
+        
         .details-card {
           flex-direction: column;
-          padding: 0 20px; /* Nuevo: padding horizontal */
+          padding: 20px;
+          margin: 20px; /* Margen para separar del borde */
         }
-
+        
         .details-photo {
           width: 100%;
           margin-right: 0;
@@ -516,7 +526,7 @@
         }
 
         .form-section {
-          padding: 50px 20px; /* Nuevo: padding horizontal */
+          padding: 50px 20px;
         }
 
         .form-image-container {
@@ -534,6 +544,11 @@
         .form-wrapper {
           width: 100%;
         }
+        
+        .contact-form {
+          max-width: 90%; /* Ancho más pequeño */
+          margin: 0 auto; /* Centrado */
+        }
 
         .iban-title,
         .iban-title-font {
@@ -546,7 +561,7 @@
         }
         
         .iban-text-container {
-          padding: 0 20px; /* Nuevo: padding horizontal */
+          padding: 0 20px;
         }
 
 
@@ -561,8 +576,7 @@
         
         .accordion {
           max-width: 100%;
-          padding-left: 20px; /* Nuevo: padding izquierdo */
-          padding-right: 20px; /* Nuevo: padding derecho */
+          padding: 0 20px; /* Padding para el acordeón */
         }
 
         .accommodation-card {
