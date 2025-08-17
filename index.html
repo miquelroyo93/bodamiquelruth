@@ -612,7 +612,7 @@
 
           <div class="buttons-container">
             <a
-              href="https://www.google.com/maps?q=38.6932,-4.1125"
+              href="https://www.google.com/maps/search/?api=1&query=Hacienda+la+Membrilleja+Puertollano"
               class="localizacion-button"
               target="_blank"
               >Localización</a
@@ -811,7 +811,7 @@
       accordionHeaders.forEach((header) => {
         header.addEventListener('click', () => {
           const content = header.nextElementSibling;
-          const icon = header.querySelector('-');
+          const icon = header.querySelector('.accordion-icon');;
 
           if (content.style.maxHeight) {
             content.style.maxHeight = null;
