@@ -30,14 +30,14 @@
       .cover-header {
         text-align: center;
         width: 100%;
-        padding: 10px 0;
+        padding: 0; /* Ajustado para reducir el espacio superior */
       }
 
       .couple-name {
         font-family: 'Lora', serif;
         font-size: 4em;
         letter-spacing: 5px;
-        margin-bottom: 10px;
+        margin-bottom: 5px; /* Ajustado para reducir el espacio con el grid */
         font-weight: 400;
       }
 
@@ -64,7 +64,7 @@
         transform: rotate(-4deg);
         margin: 20px;
         position: relative;
-        top: -60px;
+        top: -40px; /* Ajustado para reducir el espacio con el grid */
         z-index: 1;
       }
 
@@ -260,8 +260,8 @@
       }
 
       .deadline-text {
-        font-family: 'Lora', serif;
-        font-size: 0.8em;
+        font-family: 'Lexend Deca', serif;
+        font-size: 1.2em;
         color: #425c67;
         margin-top: 20px;
       }
@@ -270,8 +270,7 @@
       .iban-section {
         position: relative;
         width: 100%;
-        padding: 50px 0; /* Ajustado para hacerlo más flexible */
-        min-height: 400px; /* Altura mínima para asegurar visibilidad */
+        height: 600px; /* Aquí puedes cambiar la altura a tu gusto */
         overflow: hidden;
       }
 
@@ -279,7 +278,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: blur(3px);
+        filter: blur(3px); /* Restaurado el difuminado */
       }
 
       .iban-text-container {
@@ -293,7 +292,12 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background-color: rgba(0, 0, 0, 0.4);
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.4
+        ); /* Capa oscura para mejor lectura */
         color: white;
         padding: 20px;
         box-sizing: border-box;
@@ -301,19 +305,19 @@
 
       .iban-title {
         font-family: 'Parisienne', cursive;
-        font-size: 5em;
+        font-size: 4em;
         margin: 0;
         line-height: 1;
       }
 
       .iban-title-font {
         font-family: 'Waiting for the Sunrise', cursive;
-        font-size: 5em;
+        font-size: 4em;
       }
 
       .iban-text {
         font-family: 'Lexend Deca', serif;
-        font-size: 2.4em;
+        font-size: 2em;
         margin: 20px 0 5px 0;
       }
 
@@ -327,10 +331,10 @@
       .faq-section {
         background-color: #f5ecde;
         color: #425c67;
-        padding: 80px 20px;
+        padding: 40px 20px; /* Aumentado el padding para más espacio vertical */
         position: relative;
         overflow: hidden;
-        width: 100%; /* Ajustado a todo el ancho */
+        width: 100%;
       }
 
       .faq-content-container {
@@ -345,7 +349,7 @@
       .faq-title {
         font-family: 'Waiting for the Sunrise', cursive;
         font-size: 4em;
-        margin-bottom: 50px;
+        margin-bottom: 0px; /* Reducido el margen para que el título suba */
       }
 
       .faq-image-left,
@@ -358,7 +362,7 @@
       }
 
       .faq-image-left {
-        top: 100px;
+        top: 30px; /* Ajustado para que baje un poco la imagen */
         left: 0;
         transform: rotate(-10deg);
       }
@@ -389,7 +393,7 @@
       }
 
       .accordion-header h3 {
-        font-family: 'Lora', serif;
+        font-family: 'Lexend Deca', serif;
         font-size: 1.3em;
         margin: 0;
       }
@@ -400,17 +404,17 @@
       }
 
       .accordion-content {
-        padding: 0 20px;
+        padding: 0 50px;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
       }
 
       .accordion-content p {
-        font-family: 'Lora', serif;
+        font-family: 'Lexend Deca', serif;
         line-height: 1.6;
         margin-top: 0;
-        padding-bottom: 20px;
+        padding-bottom: 20px; /* Reducido el padding para hacerlo más compacto */
       }
 
       /* --- NUEVOS ESTILOS PARA LA SECCIÓN DE ALOJAMIENTO --- */
@@ -551,8 +555,9 @@
         }
 
         .accommodation-card {
-          width: 100%; /* Las tarjetas ocupan todo el ancho en móviles */
+          width: 100%;
           max-width: 350px;
+          margin: 0 10px; /* Nuevo: Añadido margen horizontal para evitar que se peguen a los bordes */
         }
       }
     </style>
@@ -679,10 +684,11 @@
       />
       <div class="iban-text-container">
         <h2 class="iban-title iban-title-font">
-          Tenerte en este día tan especial, no tiene precio!
+          Tenerte en este día tan especial, no tiene precio! :)
         </h2>
         <p class="iban-text">
-          Si además quieres tener un detalle con nosotros, te dejamos el IBAN:
+          Si además quieres tener un detalle con nosotros, te dejamos nuestro
+          número de cuenta:
         </p>
         <p class="iban-number">ES00 0000 0000 0000 0000 0000</p>
       </div>
@@ -816,4 +822,5 @@
     </script>
   </body>
 </html>
+
 
