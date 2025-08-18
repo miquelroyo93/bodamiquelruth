@@ -180,6 +180,7 @@
         flex-wrap: wrap;
       }
 
+      /* Estilo para la imagen original */
       .form-image {
         width: 30%;
         max-width: 300px;
@@ -188,12 +189,26 @@
         position: absolute;
         border-radius: 3%;
         top: -50px;
-        left: 19px;
+        right: -38px;
+      }
+
+      /* Nuevo estilo para la segunda imagen */
+      .form-image-bottom-right {
+        width: 40%;
+        max-width: 700px;
+        height: auto;
+        object-fit: cover;
+        position: absolute;
+        border-radius: 3%;
+        bottom: -50px;
+        left: -370px;
       }
 
       .form-wrapper {
         width: 70%;
         text-align: center;
+        margin-top: auto; /* Nuevo estilo añadido */
+        margin-bottom: auto;
       }
 
       .form-section-title {
@@ -533,12 +548,15 @@
           flex-direction: column;
           gap: 20px;
         }
-
-        .form-image {
+        
+        /* Estilos para las imágenes del formulario en móvil */
+        .form-image, .form-image-bottom-right {
+          width: 50%;
           position: relative;
           top: 0;
           left: 0;
-          width: 50%;
+          bottom: 0;
+          right: 0;
         }
 
         .form-wrapper {
@@ -644,6 +662,11 @@
           src="https://lh3.googleusercontent.com/pw/AP1GczMPsxL7m0dMq04TlM0d3_lwyq5RhnvVrICsD3BWWK-5-LVCKpEeWut2jsbX6AyNQyt3kr1jn2ZH22OyzOjjgYm4RJHLbeCH_u9YC3okEuR_V4QKpaR6bcO9mbs-AB4nNSqpSBYi_oUg0BwQ8ctuqTSc=w736-h626-s-no-gm?authuser=0"
           alt="Foto de Miquel y Ruth"
           class="form-image"
+        />
+        <img
+          src="https://lh3.googleusercontent.com/pw/AP1GczOwnAxREhlmwQfEZqfQepD-apBinUzA7yoVAi-c2fyhGdb_-ehCQG2pcPopJmdhLt3rkBfFvrlTNhBzeHa1pVJAJR71nQ2FT1yzZx7eo16HsY-HLH62WejP8SjPvE_RShy9AvLsoDAWx-MV2jFg4fqY=w1024-h1024-s-no-gm?authuser=0"
+          alt="Otra foto de Miquel y Ruth"
+          class="form-image-bottom-right"
         />
         <div class="form-wrapper">
           <h2 class="form-section-title">NOS CONFIRMAS? :)</h2>
