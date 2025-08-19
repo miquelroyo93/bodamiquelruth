@@ -82,6 +82,15 @@
           #f5ecde 20px,
           #f5ecde 40px
         );
+        /* POSICIÓN INICIAL (SIN MOVERSE) */
+        background-position: 0 0;
+        /* TRANSICIÓN PARA EL MOVIMIENTO */
+        transition: background-position 2s ease-in-out;
+      }
+
+      /* MOVIMIENTO SOLO CUANDO EL CUERPO DE LA PÁGINA TIENE LA CLASE 'is-scrolled' */
+      body.is-scrolled .details-section {
+        background-position: 40px 0;
       }
 
       .details-card {
@@ -247,7 +256,7 @@
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23425c67'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23425c67'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3Csvg%3E");
         background-repeat: no-repeat;
         background-position: right 15px center;
         padding-right: 40px;
@@ -845,6 +854,7 @@
     </section>
 
     <script>
+      // SCRIPT EXISTENTE DEL ACORDEÓN
       const accordionHeaders = document.querySelectorAll('.accordion-header');
 
       accordionHeaders.forEach((header) => {
@@ -867,6 +877,23 @@
           }
         });
       });
+
+      // --- NUEVO SCRIPT PARA LA ANIMACIÓN CON SCROLL ---
+
+      // Función que añade la clase 'is-scrolled' al body
+      function handleScroll() {
+        const scrollPosition = window.scrollY;
+        // Si el usuario se ha desplazado más de 100 píxeles, añade la clase.
+        // Puedes ajustar este valor si quieres que la animación se active antes o después.
+        if (scrollPosition > 100) {
+          document.body.classList.add('is-scrolled');
+        } else {
+          document.body.classList.remove('is-scrolled');
+        }
+      }
+
+      // Escuchar el evento de scroll en la ventana
+      window.addEventListener('scroll', handleScroll);
     </script>
   </body>
 </html>
