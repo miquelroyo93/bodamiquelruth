@@ -22,7 +22,7 @@
         align-items: center;
         min-height: 80vh;
         position: relative;
-        background-color: #425c67;
+        background-color: #5f7d68;
         width: 100vw;
         overflow-x: hidden;
       }
@@ -68,111 +68,199 @@
         z-index: 1;
       }
 
-      /* --- ESTILOS DE LA SEGUNDA SECCIÓN --- */
+      .nav-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        margin: 10px 0 30px;
+      }
+
+      .nav-button {
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 0.85em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #f5ecde;
+        border: 1.5px solid #f5ecde;
+        border-radius: 30px;
+        padding: 12px 28px;
+        text-decoration: none;
+        opacity: 0.9;
+        transition: background-color 0.2s;
+      }
+
+      .nav-button:hover {
+        background-color: rgba(245, 236, 222, 0.15);
+      }
+
+      /* --- SEGUNDA SECCIÓN --- */
       .details-section {
         width: 100%;
         padding: 50px 0;
-        background-color: #425c67;
+        background-color: #5f7d68;
         color: #f5ecde;
         text-align: center;
         background-image: repeating-linear-gradient(
           to right,
-          #425c67,
-          #425c67 20px,
+          #5f7d68,
+          #5f7d68 20px,
           #f5ecde 20px,
           #f5ecde 40px
         );
-        /* POSICIÓN INICIAL (SIN MOVERSE) */
-        background-position: 0 0;
-        /* TRANSICIÓN PARA EL MOVIMIENTO */
-        transition: background-position 2s ease-in-out;
-      }
-
-      /* MOVIMIENTO SOLO CUANDO EL CUERPO DE LA PÁGINA TIENE LA CLASE 'is-scrolled' */
-      body.is-scrolled .details-section {
-        background-position: 40px 0;
       }
 
       .details-card {
         background-color: #f5ecde;
-        color: #425c67;
-        padding: 40px;
-        max-width: 1200px;
+        color: #5f7d68;
+        max-width: 100%;
         margin: 0 auto;
-        border: 1px solid #425c67;
         position: relative;
         display: flex;
-        align-items: center;
+        align-items: stretch;
+        min-height: 500px;
       }
 
-      .details-card-border {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        bottom: 20px;
-        left: 20px;
-        border: 1px solid #425c67;
-      }
-
-      .details-photo {
+      .details-video-wrapper {
         width: 50%;
-        height: auto;
-        object-fit: contain;
-        margin-right: 20px;
-        border-radius: 3%;
+        flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+        min-height: 550px;
+      }
+
+      .details-video-wrapper video,
+      .details-video-wrapper iframe {
+        position: absolute;
+        top: 50%;
+        left: 90%;
+        width: 190%;
+        height: 190%;
+        transform: translate(-50%, -50%);
+        border: none;
       }
 
       .details-content {
         width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 60px 80px;
+        box-sizing: border-box;
         text-align: center;
+        gap: 20px;
       }
 
-      .details-card h2 {
-        font-family: 'Lora', serif;
-        font-size: 4em;
-        margin-bottom: 10px;
-      }
-
-      .details-card h3 {
-        font-family: 'Prata', serif;
-        font-weight: 400;
-        margin-top: 0;
-        font-size: 2em;
-      }
-
-      .details-card p {
-        font-family: 'Parisienne', cursive;
-        font-size: 3em;
+      .details-label {
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 1.1em;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        color: #5f7d68;
+        opacity: 0.8;
         margin: 0;
       }
 
-      .buttons-container {
+      .details-venue-name {
+        font-family: 'Lora', serif;
+        font-size: 4.5em;
+        font-weight: 500;
+        color: #5f7d68;
+        margin: 0;
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      .details-time {
+        font-family: 'Lora', serif;
+        font-size: 1.7em;
+        color: #5f7d68;
+        margin: 0;
+        opacity: 0.85;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .details-date {
+        font-family: 'Lora', serif;
+        font-weight: 400;
+      }
+
+      .details-hour {
+        font-family: 'Lora', serif;
+        font-size: 1em;
+        font-weight: 400;
+      }
+
+      .details-buttons {
         display: flex;
         flex-direction: column;
-        gap: 15px;
-        margin-top: 30px;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+      }
+
+      .bus-buttons-row {
+        display: flex;
+        flex-direction: row;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
       }
 
       .rsvp-button,
       .localizacion-button {
         position: relative;
         z-index: 10;
-        background-color: #425c67;
+        background-color: #5f7d68;
         color: #f5ecde;
-        padding: 20px 40px;
+        padding: 14px 28px;
         text-decoration: none;
-        font-family: 'Lexend Deca', serif;
-        font-size: 1.3em;
-        border: 1px solid #f5ecde;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 0.85em;
+        letter-spacing: 1px;
+        border: 1.5px solid #f5ecde;
         border-radius: 30px;
         display: inline-block;
         cursor: pointer;
       }
 
-      /* --- ESTILOS DE LA SECCIÓN DEL FORMULARIO --- */
+      .bus-button {
+        display: inline-block;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 0.75em;
+        letter-spacing: 0.5px;
+        color: #5f7d68;
+        border: 1.5px solid #5f7d68;
+        border-radius: 30px;
+        padding: 11px 18px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .bus-button .bus-time {
+        display: inline;
+        font-weight: 700;
+      }
+
+      .details-card-border { display: none; }
+      .details-photo { display: none; }
+      .buttons-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-self: center;
+      }
+
+      /* --- FORMULARIO --- */
       .form-section {
         background-color: #f5ecde;
-        color: #425c67;
+        color: #5f7d68;
         padding: 50px 20px;
         width: 100%;
         text-align: center;
@@ -189,7 +277,6 @@
         flex-wrap: wrap;
       }
 
-      /* Estilo para la imagen original */
       .form-image {
         width: 30%;
         max-width: 300px;
@@ -198,26 +285,22 @@
         position: absolute;
         border-radius: 3%;
         top: -50px;
-        right: -38px;
+        left: 19px;
       }
 
-      /* Nuevo estilo para la segunda imagen */
-      .form-image-bottom-right {
-        width: 40%;
-        max-width: 700px;
+      .form-image-right {
+        width: 50%;
+        max-width: 500px;
         height: auto;
-        object-fit: cover;
+        object-fit: contain;
         position: absolute;
-        border-radius: 3%;
-        bottom: -50px;
-        left: -370px;
+        bottom: -150px;
+        right: -200px;
       }
 
       .form-wrapper {
         width: 70%;
         text-align: center;
-        margin-top: auto; /* Nuevo estilo añadido */
-        margin-bottom: auto;
       }
 
       .form-section-title {
@@ -235,20 +318,18 @@
         text-align: left;
       }
 
-      .form-field {
-        position: relative;
-      }
+      .form-field { position: relative; }
 
       .form-field input,
       .form-field select {
         width: 100%;
         padding: 15px 20px;
-        border: 2px solid #425c67;
+        border: 2px solid #5f7d68;
         border-radius: 5px;
         background-color: #f5ecde;
         font-family: 'Lexend Deca', serif;
         font-size: 1em;
-        color: #425c67;
+        color: #5f7d68;
         box-sizing: border-box;
       }
 
@@ -256,19 +337,19 @@
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23425c67'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3Csvg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235f7d68'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E");
         background-repeat: no-repeat;
         background-position: right 15px center;
         padding-right: 40px;
       }
 
       .form-field input::placeholder {
-        color: #425c67;
+        color: #5f7d68;
         opacity: 0.7;
       }
 
       .submit-button {
-        background-color: #425c67;
+        background-color: #5f7d68;
         color: #f5ecde;
         padding: 20px 30px;
         border: none;
@@ -279,18 +360,16 @@
         margin-top: 10px;
       }
 
-      .submit-button:hover {
-        background-color: #2b414a;
-      }
+      .submit-button:hover { background-color: #4a6350; }
 
       .deadline-text {
         font-family: 'Lexend Deca', serif;
         font-size: 1.2em;
-        color: #425c67;
+        color: #5f7d68;
         margin-top: 20px;
       }
 
-      /* --- ESTILOS PARA LA NUEVA SECCIÓN DE IBAN --- */
+      /* --- IBAN --- */
       .iban-section {
         position: relative;
         width: 100%;
@@ -307,21 +386,14 @@
 
       .iban-text-container {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        background-color: rgba(
-          0,
-          0,
-          0,
-          0.4
-        );
+        background-color: rgba(0, 0, 0, 0.4);
         color: white;
         padding: 20px;
         box-sizing: border-box;
@@ -351,10 +423,10 @@
         font-weight: bold;
       }
 
-      /* --- NUEVA SECCIÓN DE PREGUNTAS FRECUENTES (FAQ) --- */
+      /* --- FAQ --- */
       .faq-section {
         background-color: #f5ecde;
-        color: #425c67;
+        color: #5f7d68;
         padding: 40px 20px;
         position: relative;
         overflow: hidden;
@@ -376,35 +448,36 @@
         margin-bottom: 0px;
       }
 
-      .faq-image-left,
-      .faq-image-right {
-        width: 250px;
-        height: 250px;
+      /* Nueva imagen izquierda inferior */
+      .faq-image-bottom-left {
+        width: 320px;
+        height: auto;
         object-fit: contain;
         position: absolute;
+        bottom: 0;
+        left: 0;
         z-index: 1;
       }
 
-      .faq-image-left {
-        top: 30px;
-        left: 0;
-        transform: rotate(-10deg);
-      }
-
-      .faq-image-right {
-        bottom: 0;
+      /* Foto arriba a la derecha (se mantiene) */
+      .faq-image-top-right {
+        width: 300px;
+        height: auto;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
         right: 0;
-        transform: rotate(10deg);
+        z-index: 1;
       }
 
       .accordion {
         width: 100%;
         max-width: 700px;
-        border-top: 1px solid #425c67;
+        border-top: 1px solid #5f7d68;
       }
 
       .accordion-item {
-        border-bottom: 1px solid #425c67;
+        border-bottom: 1px solid #5f7d68;
         text-align: left;
       }
 
@@ -441,312 +514,277 @@
         padding-bottom: 20px;
       }
 
-      /* --- NUEVOS ESTILOS PARA LA SECCIÓN DE ALOJAMIENTO --- */
+      /* --- ALOJAMIENTO --- */
       .accommodation-section {
-        background-color: #425c67;
+        background-color: #5f7d68;
         color: #f5ecde;
-        padding: 0px 20px;
+        padding: 80px 60px 100px;
         width: 100%;
         text-align: center;
+        box-sizing: border-box;
       }
 
       .accommodation-title {
         font-family: 'Waiting for the Sunrise', cursive;
-        font-size: 4em;
-        margin-bottom: 10px;
+        font-size: 5.5em;
+        margin-bottom: 50px;
+        margin-top: 0;
       }
 
       .accommodation-grid {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 30px;
-        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 35px;
+        max-width: 1500px;
         margin: 0 auto;
       }
 
       .accommodation-card {
         background-color: #f5ecde;
-        color: #425c67;
-        border: 2px dashed #425c67;
-        padding: 30px;
-        width: 300px;
+        color: #5f7d68;
+        border: 2px dashed #5f7d68;
+        padding: 30px 25px;
         text-align: center;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
       }
 
       .accommodation-card h3 {
         font-family: 'Lexend Deca', sans-serif;
-        font-weight: 500;
-        font-size: 1.5em;
+        font-weight: 700;
+        font-size: 1.1em;
+        margin: 0;
+        letter-spacing: 1px;
+        line-height: 1.3;
+      }
+
+      .accommodation-card .card-city {
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 0.85em;
+        font-weight: 400;
+        margin: 0;
+        opacity: 0.7;
+        letter-spacing: 1px;
+      }
+
+      .accommodation-card .card-photo {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 50% 50% 45% 45%;
+        display: block;
+        filter: grayscale(100%);
+      }
+
+      .accommodation-card .card-btn {
+        display: inline-block;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        color: #5f7d68;
+        border: 1.5px solid #5f7d68;
+        border-radius: 30px;
+        padding: 10px 22px;
+        text-decoration: none;
+        margin-top: 5px;
+      }
+
+      /* --- RESTAURANTES --- */
+      .restaurants-section {
+        background-color: #f5ecde;
+        color: #5f7d68;
+        padding: 80px 60px 100px;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+      }
+
+      .restaurants-title {
+        font-family: 'Waiting for the Sunrise', cursive;
+        font-size: 5.5em;
+        margin-bottom: 50px;
         margin-top: 0;
+        color: #5f7d68;
       }
 
-      .accommodation-card p {
+      .restaurants-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .restaurant-card {
+        background-color: #5f7d68;
+        color: #f5ecde;
+        border: 2px dashed #f5ecde;
+        padding: 30px 20px;
+        text-align: center;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        min-height: 160px;
+      }
+
+      .restaurant-card h3 {
         font-family: 'Lexend Deca', sans-serif;
+        font-weight: 700;
         font-size: 1em;
-        margin: 10px 0;
-        line-height: 1.5;
+        margin: 0;
+        letter-spacing: 1px;
+        line-height: 1.3;
       }
 
-      .accommodation-card .phone {
+      .restaurant-card .card-city {
         font-family: 'Lexend Deca', sans-serif;
-        font-size: 1em;
-        margin-top: 20px;
+        font-size: 0.8em;
+        font-weight: 400;
+        margin: 0;
+        opacity: 0.7;
+        letter-spacing: 1px;
       }
 
-      /* --- MEDIA QUERIES PARA RESPONSIVE --- */
+      .restaurant-card .card-btn {
+        display: inline-block;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        color: #f5ecde;
+        border: 1.5px solid #f5ecde;
+        border-radius: 30px;
+        padding: 10px 22px;
+        text-decoration: none;
+        margin-top: 5px;
+      }
+
+      /* --- MEDIA QUERIES --- */
       @media (max-width: 768px) {
-        body {
-          padding: 0 10px;
-        }
-        
-        .couple-name {
-          font-size: 2.5em; /* Ajuste de tamaño */
-          margin: 0 10px;
-        }
-
-        .photo-grid img {
-          width: 150px;
-          height: 150px;
-        }
-
-        .tagline {
-          font-size: 3em;
-          top: -30px;
-          white-space: nowrap;
-        }
-
-        .details-section {
-          padding: 50px 0;
-        }
-        
-        .details-card {
-          flex-direction: column;
-          padding: 20px;
-          margin: 20px; /* Margen para separar del borde */
-        }
-        
-        .details-photo {
-          width: 100%;
-          margin-right: 0;
-          margin-bottom: 20px;
-        }
-
-        .details-content {
-          width: 100%;
-        }
-
-        .details-card h2 {
-          font-size: 3em;
-        }
-
-        .details-card h3 {
-          font-size: 1.5em;
-        }
-
-        .details-card p {
-          font-size: 2em;
-        }
-
-        .form-section {
-          padding: 50px 20px;
-        }
-
-        .form-image-container {
-          flex-direction: column;
-          gap: 20px;
-        }
-        
-        /* Estilos para las imágenes del formulario en móvil */
-        .form-image, .form-image-bottom-right {
-          width: 50%;
-          position: relative;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-        }
-
-        .form-wrapper {
-          width: 100%;
-        }
-        
-        .contact-form {
-          max-width: 90%; /* Ancho más pequeño */
-          margin: 0 auto; /* Centrado */
-        }
-
-        .iban-title,
-        .iban-title-font {
-          font-size: 2.5em;
-        }
-
-        .iban-text,
-        .iban-number {
-          font-size: 1.5em;
-        }
-        
-        .iban-text-container {
-          padding: 0 20px;
-        }
-
-
-        .faq-image-left,
-        .faq-image-right {
-          display: none;
-        }
-
-        .faq-title {
-          font-size: 3em;
-        }
-        
-        .accordion {
-          max-width: 100%;
-          padding: 0 20px; /* Padding para el acordeón */
-        }
-
-        .accommodation-card {
-          width: 100%;
-          max-width: 350px;
-          margin: 0 10px;
-        }
+        .couple-name { font-size: 3em; }
+        .photo-grid img { width: 150px; height: 150px; }
+        .tagline { font-size: 3em; top: -30px; white-space: nowrap; }
+        .details-card { flex-direction: column; }
+        .details-video-wrapper { width: 100%; min-height: 0; height: 0; padding-bottom: 56.25%; position: relative; }
+        .details-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: none; }
+        .details-content { width: 100%; padding: 40px 20px; gap: 24px; min-height: 250px; }
+        .details-venue-name { font-size: 2.2em; }
+        .details-time { font-size: 1.2em; flex-wrap: wrap; justify-content: center; }
+        .bus-buttons-row { flex-direction: column; align-items: center; }
+        .details-photo { display: none; }
+        .form-image-container { flex-direction: column; gap: 20px; }
+        .form-image { position: relative; top: 0; left: 0; width: 50%; }
+        .form-image-right { display: none; }
+        .form-wrapper { width: 100%; }
+        .iban-title, .iban-title-font { font-size: 2.5em; }
+        .iban-text, .iban-number { font-size: 1.5em; }
+        .faq-image-bottom-left, .faq-image-top-right { display: none; }
+        .faq-title { font-size: 3em; }
+        .accordion { max-width: 100%; }
+        .accommodation-title, .restaurants-title { font-size: 3em; }
+        .accommodation-grid { grid-template-columns: repeat(2, 1fr); }
+        .restaurants-grid { grid-template-columns: repeat(2, 1fr); }
       }
     </style>
   </head>
   <body>
     <header class="cover-header">
       <h1 class="couple-name">Miquel & Ruth</h1>
-
       <div class="photo-grid">
-        <img
-          src="https://lh3.googleusercontent.com/pw/AP1GczMzR5Ln3recfVEqtSJKKf2zV7yyZwDmb2n556WglM1DNX7j4NjMSCixgn3sRWgDgO7XGnkphFyCrK2wK154uq8-pgyiayTJUQDq7Vayj7auGSi04AIiRXsOoYHoqJyCZvjK6T8A0G8J0aAUntsElHQs=w1230-h1640-s-no?authuser=0"
-          alt="Foto de Miquel y Ruth"
-        />
-        <img
-          src="https://lh3.googleusercontent.com/pw/AP1GczPHeP7i4a2yRC-T-BFSWXQqlE7SvnZwETO0m7nhINiZQlkjiJAFRHGAhpwIj4ckYUFxOxMmmdvRAtZwFKj-kKly4LvJz1Fd5nR8fTh2XrgdQ0Ex4Y9o0joTHa7ylliD3wXlPxCOZ6qtD_zljocMZWTX=w683-h911-s-no-gm?authuser=0"
-          alt="Foto de Miquel y Ruth"
-        />
-        <img
-          src="https://lh3.googleusercontent.com/pw/AP1GczMvJME1iODseZgwLjnmTyKo5Mwd-_c9spjWHK7Re7wK50Q3CBXBKCKgKMraAo55era-lXghmSIgdbzF6EaM1cTxiRvhlHG7i0eQURwfINEQlYF41NK_aBY5ULf08sjTwvjdEUulMJpRZbNLdaZ6u-k3=w1230-h1640-s-no?authuser=0"
-          alt="Foto de Miquel y Ruth"
-        />
-        <img
-          src="https://lh3.googleusercontent.com/pw/AP1GczOfDLTDh6FrXQjo7aaaxImaRPciz2A1BQN3wLmUbRpclHJUINRrviS9AMrRf42YYsoLLYlhdgA2_9ZR2-xbo5FM3kGm5LNHHO8qGJ5a0gnd-IrZ7v0K-gxrbVO3DatDRuYDqeF7_F8lLxt2y1Gypxas=w1230-h1640-s-no?authuser=0"
-          alt="Foto de Miquel y Ruth"
-        />
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMzR5Ln3recfVEqtSJKKf2zV7yyZwDmb2n556WglM1DNX7j4NjMSCixgn3sRWgDgO7XGnkphFyCrK2wK154uq8-pgyiayTJUQDq7Vayj7auGSi04AIiRXsOoYHoqJyCZvjK6T8A0G8J0aAUntsElHQs=w1230-h1640-s-no?authuser=0" alt="Foto de Miquel y Ruth" />
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczPHeP7i4a2yRC-T-BFSWXQqlE7SvnZwETO0m7nhINiZQlkjiJAFRHGAhpwIj4ckYUFxOxMmmdvRAtZwFKj-kKly4LvJz1Fd5nR8fTh2XrgdQ0Ex4Y9o0joTHa7ylliD3wXlPxCOZ6qtD_zljocMZWTX=w683-h911-s-no-gm?authuser=0" alt="Foto de Miquel y Ruth" />
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMvJME1iODseZgwLjnmTyKo5Mwd-_c9spjWHK7Re7wK50Q3CBXBKCKgKMraAo55era-lXghmSIgdbzF6EaM1cTxiRvhlHG7i0eQURwfINEQlYF41NK_aBY5ULf08sjTwvjdEUulMJpRZbNLdaZ6u-k3=w1230-h1640-s-no?authuser=0" alt="Foto de Miquel y Ruth" />
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczOfDLTDh6FrXQjo7aaaxImaRPciz2A1BQN3wLmUbRpclHJUINRrviS9AMrRf42YYsoLLYlhdgA2_9ZR2-xbo5FM3kGm5LNHHO8qGJ5a0gnd-IrZ7v0K-gxrbVO3DatDRuYDqeF7_F8lLxt2y1Gypxas=w1230-h1640-s-no?authuser=0" alt="Foto de Miquel y Ruth" />
       </div>
-
-      <p class="tagline">we're getting married!</p>
+      <p class="tagline">¡nos casamos!</p>
+      <nav class="nav-buttons">
+        <a href="#confirmacion" class="nav-button">Confirmación</a>
+        <a href="#hoteles" class="nav-button">Hoteles</a>
+        <a href="#restaurantes" class="nav-button">Restaurantes</a>
+      </nav>
     </header>
 
     <section class="details-section">
       <div class="details-card">
-        <div class="details-card-border"></div>
-        <img
-          src="https://lh3.googleusercontent.com/pw/AP1GczOMBRdDLmSitcfWf8e7Yusym25h086seAvzDWJ1voJ1owGy7gH1fQnR4fmTKx8n_QJP5ctVDZ8wuqyX3Vrwp-fhBv3PyxDFI0afFeKWj_sFMypbsGvdyn0LrD5Qcn1dg1yBk5OLSGRMalV5fIwqqh4X=w1024-h1024-s-no-gm?authuser=0"
-          alt="Ilustración de la hacienda"
-          class="details-photo"
-        />
+        <div class="details-video-wrapper">
+          <iframe src="https://www.youtube.com/embed/xjTXpOHwmZM?autoplay=1&mute=1&loop=1&playlist=xjTXpOHwmZM&controls=0&showinfo=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
         <div class="details-content">
-          <h2>Sábado 4 de Julio</h2>
-          <h3>de 2026</h3>
-          <p>Hacienda la Membrilleja,<br />Puertollano</p>
-
-          <div class="buttons-container">
-            <a
-              href="https://maps.google.com/?cid=7982993158720468828&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ"
-              class="localizacion-button"
-              target="_blank"
-              >Localización</a
-            >
+          <p class="details-label">Ubicación</p>
+          <h2 class="details-venue-name">Hacienda la<br>Membrilleja</h2>
+          <p class="details-time">
+            <span class="details-date">11 de Septiembre de 2026</span> · <span class="details-hour">18:30h</span>
+          </p>
+          <div class="details-buttons">
+            <a href="https://maps.google.com/?cid=7982993158720468828&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" class="localizacion-button" target="_blank">Cómo llegar</a>
+            <div class="bus-buttons-row">
+              <a href="https://maps.app.goo.gl/Kn2DBhyjx6jwhPZV6" class="bus-button" target="_blank">🚌 BUS PUERTOLLANO · <span class="bus-time">17:30h</span></a>
+              <a href="https://maps.app.goo.gl/55fCpB6LCfFyRnfX8" class="bus-button" target="_blank">🚌 BUS CIUDAD REAL · <span class="bus-time">18:00h</span></a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="form-section">
+    <section class="form-section" id="confirmacion">
       <div class="form-image-container">
-        <img
-          src="https://lh3.googleusercontent.com/pw/AP1GczMPsxL7m0dMq04TlM0d3_lwyq5RhnvVrICsD3BWWK-5-LVCKpEeWut2jsbX6AyNQyt3kr1jn2ZH22OyzOjjgYm4RJHLbeCH_u9YC3okEuR_V4QKpaR6bcO9mbs-AB4nNSqpSBYi_oUg0BwQ8ctuqTSc=w736-h626-s-no-gm?authuser=0"
-          alt="Foto de Miquel y Ruth"
-          class="form-image"
-        />
-        <img
-          src="https://lh3.googleusercontent.com/pw/AP1GczOwnAxREhlmwQfEZqfQepD-apBinUzA7yoVAi-c2fyhGdb_-ehCQG2pcPopJmdhLt3rkBfFvrlTNhBzeHa1pVJAJR71nQ2FT1yzZx7eo16HsY-HLH62WejP8SjPvE_RShy9AvLsoDAWx-MV2jFg4fqY=w1024-h1024-s-no-gm?authuser=0"
-          alt="Otra foto de Miquel y Ruth"
-          class="form-image-bottom-right"
-        />
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczP9yrCOyLCfx7AXlC5p0IuqZ79WSHNoRE6MZugPX1iIU6phJsZGQKkT3m1ChFUD8F11CtPm521VJ3sR2ZsZkQreHK6C6EPDivXBGm2t6BVSZZqt-tD7Z29Aqn7X9VZAhHXEgzQ7D8Vv82TjR1X6Nc-U=w620-h596-s-no-gm?authuser=0" alt="Foto de Miquel y Ruth" class="form-image" />
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMUsrKUDWm3y_ZZug7Z_wGiuO-uIdVNvNftsJzGRheoHnu-PBYwswtMUK6-Py9I06Pj8yvIzZVoniLMwAw5Ed8p8LZ_ts7Wk-ZwtaHkfSyQjWAVtOI1OAR7ZOLVA5BzXtlvv7HXSLs7EwQwyB7ml4yX=w736-h736-s-no-gm?authuser=0" alt="Decoración" class="form-image-right" />
         <div class="form-wrapper">
           <h2 class="form-section-title">NOS CONFIRMAS? :)</h2>
-          <form
-            class="contact-form"
-            name="invitacion-boda"
-            method="POST"
-            data-netlify="true"
-          >
+          <form class="contact-form" name="invitacion-boda" method="POST" data-netlify="true">
             <div class="form-field">
               <label for="attending" class="sr-only">¿Te apuntas?</label>
               <select id="attending" name="attending" required>
                 <option value="" disabled selected>¿TE APUNTAS?</option>
-                <option value="si">Sí, me apunto</option>
-                <option value="no">No puedo asistir</option>
+                <option value="si"> ¡CLARO! 🕺🏽💃🏽</option>
+                <option value="no">No... 😢</option>
               </select>
             </div>
-
             <div class="form-field">
               <label for="name" class="sr-only">Nombre y Apellido</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="NOMBRE Y APELLIDO"
-                required
-              />
+              <input type="text" id="name" name="name" placeholder="NOMBRE Y APELLIDO" required />
             </div>
-
             <div class="form-field">
               <label for="autobus" class="sr-only">¿Necesitas bus?</label>
               <select id="autobus" name="autobus">
                 <option value="" disabled selected>BUS</option>
-                <option value="si">SÍ</option>
-                <option value="no">NO</option>
+                <option value="puertollano">SÍ, desde PUERTOLLANO (17:30h)</option>
+                <option value="ciudadreal">SÍ, desde CIUDAD REAL (18h)</option>
+                <option value="no">NO, iré por mi cuenta</option>
               </select>
             </div>
-
             <div class="form-field">
-              <label for="allergies" class="sr-only"
-                >Intolerancias y Alergias</label
-              >
-              <input
-                type="text"
-                id="allergies"
-                name="allergies"
-                placeholder="INTOLERANCIAS Y ALERGIAS"
-              />
+              <label for="menu" class="sr-only">¿Qué segundo plato quieres?</label>
+              <select id="menu" name="menu">
+                <option value="" disabled selected>¿Qué segundo plato quieres?</option>
+                <option value="carne">🥩 CARNE: Magret de Pato con tatin de pera</option>
+                <option value="pescado">🐟 PESCADO: Corvina asada con crema de hoja de lima</option>
+                <option value="infantil">🍝 MENÚ INFANTIL</option>
+              </select>
             </div>
-
+            <div class="form-field">
+              <label for="allergies" class="sr-only">Intolerancias y Alergias</label>
+              <input type="text" id="allergies" name="allergies" placeholder="INTOLERANCIAS Y ALERGIAS" />
+            </div>
             <button type="submit" class="submit-button">ENVIAR</button>
           </form>
-          <p class="deadline-text">*CONFIRMAR ANTES DEL 1 DE ABRIL</p>
+          <p class="deadline-text">*CONFIRMAR ANTES DEL 1 DE JULIO</p>
         </div>
       </div>
     </section>
 
     <section class="iban-section">
-      <img
-        src="https://lh3.googleusercontent.com/pw/AP1GczPVA29zOifDHM2TJT_apYll6gkC64-5jiQ5jK2w1TCEq5ZGTu0uPXrrRPa-UKQ5xbjA7bDVt5w7V-DvBzASo8il8Wr1N_QwkUJJMDhIlU2zrJqILDcMg7GyVLr_UgvsOs0GPugLEOxB8s7AnhB1yMwj=w1920-h1080-s-no-gm?authuser=0"
-        alt="Foto de Miquel y Ruth"
-        class="iban-image"
-      />
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczPVA29zOifDHM2TJT_apYll6gkC64-5jiQ5jK2w1TCEq5ZGTu0uPXrrRPa-UKQ5xbjA7bDVt5w7V-DvBzASo8il8Wr1N_QwkUJJMDhIlU2zrJqILDcMg7GyVLr_UgvsOs0GPugLEOxB8s7AnhB1yMwj=w1920-h1080-s-no-gm?authuser=0" alt="Foto de Miquel y Ruth" class="iban-image" />
       <div class="iban-text-container">
-        <h2 class="iban-title iban-title-font">
-          Tenerte en este día tan especial, no tiene precio! :)
-        </h2>
-        <p class="iban-text">
-          Si además quieres tener un detalle con nosotros, te dejamos nuestro
-          número de cuenta:
-        </p>
+        <h2 class="iban-title iban-title-font">Tenerte en este día tan especial, no tiene precio! :)</h2>
+        <p class="iban-text">Si además quieres tener un detalle con nosotros, te dejamos nuestro número de cuenta:</p>
         <p class="iban-number">ES00 0000 0000 0000 0000 0000</p>
       </div>
     </section>
@@ -757,145 +795,118 @@
         <div class="accordion">
           <div class="accordion-item">
             <div class="accordion-header">
-              <h3>¿Pueden ir niños?</h3>
+              <h3>👶🏻 ¿Pueden ir niños?</h3>
               <span class="accordion-icon">+</span>
             </div>
             <div class="accordion-content">
-              <p>
-                Porque queremos que lo deis todo, la celebración será
-                exclusivamente para adultos.
-              </p>
+              <p>Queremos que lo deis TODO y disfrutéis sin límites, así que mejor sin niños.😜 Peeeero… si os hace falta traerlos, ¡ningún problema!</p>
             </div>
           </div>
           <div class="accordion-item">
             <div class="accordion-header">
-              <h3>¿Cuál es el dresscode?</h3>
+              <h3>👔👗 ¿Cuál es el dresscode?</h3>
               <span class="accordion-icon">+</span>
             </div>
             <div class="accordion-content">
-              <p>
-                El dresscode es formal. Hombres con traje, mujeres con vestido
-                de gala.
-              </p>
+              <p>El blanco mejor para otro día, si no queréis que a Ruth le de un infarto. Chicos, sacad vuestro mejor traje y chicas, vuestras mejores galas!</p>
             </div>
           </div>
           <div class="accordion-item">
             <div class="accordion-header">
-              <h3>¿A qué hora son los buses?</h3>
+              <h3>🚌 ¿A qué hora son los buses?</h3>
               <span class="accordion-icon">+</span>
             </div>
             <div class="accordion-content">
-              <p>
-                Los buses saldrán a las 15:00h desde la Plaza Mayor de
-                Puertollano. Habrá más detalles en la invitación.
-              </p>
+              <p>Dispondremos de servicio de autobús con salidas desde Puertollano (17:30h) y Ciudad Real (18h). Al finalizar la celebración, habrá servicio de regreso con salidas a la 1:30h, 3:30h y 5:30h.</p>
             </div>
           </div>
           <div class="accordion-item">
             <div class="accordion-header">
-              <h3>¿Dónde me puedo peinar?</h3>
+              <h3>⁉️ ¿Y si tengo más preguntas?</h3>
               <span class="accordion-icon">+</span>
             </div>
             <div class="accordion-content">
-              <p>
-                Te recomendamos la peluquería "Estilo Único" en la Calle del
-                Mar, 12.
-              </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <div class="accordion-header">
-              <h3>¿Y si tengo más preguntas?</h3>
-              <span class="accordion-icon">+</span>
-            </div>
-            <div class="accordion-content">
-              <p>
-                No dudes en contactar a Miquel o Ruth. Estaremos encantados de
-                ayudarte.
-              </p>
+              <p>A estas alturas sólo deberías dudar si beber Gintonic como Ruth o Ballantines naranja como Miquel, pero si tienes algo no dudes en contactarnos! 😊</p>
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="https://lh3.googleusercontent.com/pw/AP1GczOQAUB8yyzGHnUxCQJqCqCOzbZoPH4npV0taS2oHwDoAiRPtmoQuWobnBBh93r8zySAfJ5bzXtTqx0f0KmIoWFT0w_Eg1CuspZF5Zemi8NflqbaP5vrYLVBJcjVx7uY3UXw0FcIrqP22HmmbePENzwl=w378-h344-s-no-gm?authuser=0"
-        alt="Pastel de bodas"
-        class="faq-image-left"
-      />
-      <img
-        src="https://lh3.googleusercontent.com/pw/AP1GczPrpqEgOSASD4WEWy1a3z6iDfjW3PJsc6XaUWgMzVX1gZfg1U-IaE1ClPHk5fBGRwWZkLPB-xK_bYWB2O7XlgCuvLU20FuEKTlXIX67LQAwUd9MuDx6bs2ZRXWnFh5PQS-xRZ90266lx1NXgm60IFoN=w286-h336-s-no-gm?authuser=0"
-        alt="Fuente de agua"
-        class="faq-image-right"
-      />
+
+      <!-- Nueva imagen abajo a la izquierda -->
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczP81J30de7OAHdjJVT1BNP8rfMOrGaVQ_9qa--WhrGdcqShRP1DRKEBWvycxtucVuzJ8O01ZT5hPsWofKEeTklNaNpot2ioI-WjOIF2tsYUWPi7DqUK0mKIu-wM1tjnKQwIHfikr8LHadQTKcuIWbV-=w1200-h857-s-no-gm?authuser=0" alt="Decoración" class="faq-image-bottom-left" />
+      <!-- Foto arriba a la derecha (se mantiene) -->
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczOt6APWWHBIUsdYsp7f7id5DAU2kEyYZLyclIkBJbinDoZpelbBfPvdN3qFDnZMe0D6I6yOWV3swoO43WsQOlJH7CyPJJdqOG6D86bXipYniDAt7fTSnDGTcKaKpfQDAsLZoBo3Y_xWzSjXZrjokv8d=w736-h933-s-no-gm?authuser=0" alt="Decoración" class="faq-image-top-right" />
     </section>
 
-    <section class="accommodation-section">
+    <section class="accommodation-section" id="hoteles">
       <h2 class="accommodation-title">¿Donde alojarse?</h2>
       <div class="accommodation-grid">
         <div class="accommodation-card">
-          <h3>THE SANDHOUSE</h3>
-          <p>ROSSNOWLAGH BEACH<br />ROSSNOWLAGH CO. DONEGAL</p>
-          <p>4 STAR MANOR HOUSE OVERLOOKING DONEGAL BAY</p>
-          <p class="phone">(071) 985 1777</p>
+          <h3>HOTEL SANTA EULALIA</h3>
+          <p class="card-city">PUERTOLLANO</p>
+          <img src="https://www.hotelsantaeulaliapuertollano.es/wp-content/uploads/hotel13.png" alt="Hotel Santa Eulalia" class="card-photo" />
+          <a href="https://maps.google.com/?q=Hotel+Santa+Eulalia+Puertollano" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
         </div>
         <div class="accommodation-card">
-          <h3>THE ARCHES COUNTRY HOUSE</h3>
-          <p>TOWYGAORLLOUGH REBE<br />CO. DONEGAL</p>
-          <p>COUNTRY HOUSE WITH LAKE VIEWS</p>
-          <p class="phone">(074) 972 2029</p>
+          <h3>HOTEL PUERTOLLANO</h3>
+          <p class="card-city">PUERTOLLANO</p>
+          <img src="https://dam.melia.com/melia/accounts/f8/4000018/projects/127/assets/45/94733/6afeb373ff25fc4cc7041a607ada7bf5-1651652173.jpg?im=RegionOfInterestCrop=(360,240),regionOfInterest=(1476.5,980.5)" alt="Hotel Puertollano" class="card-photo" />
+          <a href="https://maps.google.com/?q=Hotel+Puertollano+Melia+Puertollano" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
         </div>
         <div class="accommodation-card">
-          <h3>THE ABBEY HOTEL</h3>
-          <p>DIAMOND CO. DONEGAL</p>
-          <p>HOTEL IN THE CENTRE OF DONEGAL TOWN</p>
-          <p class="phone">(074) 972 1014</p>
+          <h3>NH HOTEL</h3>
+          <p class="card-city">CIUDAD REAL</p>
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczOLx53TahHy4InJgJkQweOqBcJclbzcPYkC1CvZBRR3sp1sTEzNWyTPItd6PWQN7HOKMX9VVDmuuwyUbbVRjyxbk95dZ0gMaHgT6zD56Jmjut3TTBYULP0hayYqqIra6kzjnmYwYbHWU_lFdGP3lFmL=w1530-h762-s-no-gm?authuser=0" alt="NH Hotel Ciudad Real" class="card-photo" />
+          <a href="https://maps.google.com/?q=NH+Hotel+Ciudad+Real" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
         </div>
+        <div class="accommodation-card">
+          <h3>HOTEL ALFONSO X</h3>
+          <p class="card-city">CIUDAD REAL</p>
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczNL_cCtqwJM3EjaH8ge3k3JqLdM_EGlIRwt9nodTl395Fy3r1jW1OKs41IEsLbQfwhx2iraypqIchGRuy_7QgjW2zPosdA228wA3zwn7FjBkOLQV01EqxZ8i9GiffB0b1UvVYE2vY1Ira4aeOoMV1zA=w1650-h1098-s-no-gm?authuser=0" alt="Hotel Alfonso X Ciudad Real" class="card-photo" />
+          <a href="https://maps.google.com/?q=Eurostars+Rey+Alfonso+X+Ciudad+Real" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="restaurants-section" id="restaurantes">
+      <h2 class="restaurants-title">¿Dónde comer?</h2>
+      <div class="restaurants-grid">
+        <div class="restaurant-card"><h3>HAVANA</h3><p class="card-city">PUERTOLLANO</p><a href="https://maps.app.goo.gl/2iR1HQS9xs7QaKsV9" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
+        <div class="restaurant-card"><h3>LA ULA</h3><p class="card-city">PUERTOLLANO</p><a href="https://maps.app.goo.gl/LmSQD9dELu8N7B598" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
+        <div class="restaurant-card"><h3>BAR MANOLO</h3><p class="card-city">PUERTOLLANO</p><a href="https://maps.app.goo.gl/sb3NT8ken2BVNMK87" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
+        <div class="restaurant-card"><h3>LA CHACINERÍA</h3><p class="card-city">PUERTOLLANO</p><a href="https://maps.app.goo.gl/VobrMB3jjKqhQgst5" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
+        <div class="restaurant-card"><h3>LA GAMBA</h3><p class="card-city">PUERTOLLANO</p><a href="https://maps.app.goo.gl/qxvhJQJPKTobSo699" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
+        <div class="restaurant-card"><h3>ARROZ&amp;ROLL</h3><p class="card-city">PUERTOLLANO</p><a href="https://maps.app.goo.gl/o7Ye7diiQCajbrKv6" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
+        <div class="restaurant-card"><h3>LA TABERNA DEL PUERTO</h3><p class="card-city">PUERTOLLANO</p><a href="https://maps.app.goo.gl/w2h1d7PAB4VBwir5A" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
+        <div class="restaurant-card"><h3>GURIDI</h3><p class="card-city">CIUDAD REAL</p><a href="https://maps.app.goo.gl/JJuLBjHkMj1zBSeF9" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
+        <div class="restaurant-card"><h3>ASADOR DE SAN UBERTO</h3><p class="card-city">CIUDAD REAL</p><a href="https://maps.app.goo.gl/nKDiQYei9i78YJSD7" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
+        <div class="restaurant-card"><h3>PURA CEPA</h3><p class="card-city">CIUDAD REAL</p><a href="https://maps.app.goo.gl/mGx8eWU2wmUfsFVA8" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
+        <div class="restaurant-card"><h3>CARMEN CARMEN</h3><p class="card-city">CIUDAD REAL</p><a href="https://maps.app.goo.gl/7WLv8WQzFgcb1PEdA" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
+        <div class="restaurant-card"><h3>MIAMI GASTROBAR</h3><p class="card-city">CIUDAD REAL</p><a href="https://maps.app.goo.gl/43A72fx8VQGTg4Pz9" class="card-btn" target="_blank">¡QUIERO IR!</a></div>
       </div>
     </section>
 
     <script>
-      // SCRIPT EXISTENTE DEL ACORDEÓN
       const accordionHeaders = document.querySelectorAll('.accordion-header');
-
       accordionHeaders.forEach((header) => {
         header.addEventListener('click', () => {
           const content = header.nextElementSibling;
           const icon = header.querySelector('.accordion-icon');
-
           if (content.style.maxHeight) {
             content.style.maxHeight = null;
             icon.textContent = '+';
           } else {
-            document.querySelectorAll('.accordion-content').forEach((item) => {
-              item.style.maxHeight = null;
-            });
-            document.querySelectorAll('.accordion-icon').forEach((item) => {
-              item.textContent = '+';
-            });
+            document.querySelectorAll('.accordion-content').forEach((item) => { item.style.maxHeight = null; });
+            document.querySelectorAll('.accordion-icon').forEach((item) => { item.textContent = '+'; });
             content.style.maxHeight = content.scrollHeight + 'px';
             icon.textContent = '-';
           }
         });
       });
-
-      // --- NUEVO SCRIPT PARA LA ANIMACIÓN CON SCROLL ---
-
-      // Función que añade la clase 'is-scrolled' al body
-      function handleScroll() {
-        const scrollPosition = window.scrollY;
-        // Si el usuario se ha desplazado más de 100 píxeles, añade la clase.
-        // Puedes ajustar este valor si quieres que la animación se active antes o después.
-        if (scrollPosition > 100) {
-          document.body.classList.add('is-scrolled');
-        } else {
-          document.body.classList.remove('is-scrolled');
-        }
-      }
-
-      // Escuchar el evento de scroll en la ventana
-      window.addEventListener('scroll', handleScroll);
     </script>
   </body>
 </html>
+
+
 
 
