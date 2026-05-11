@@ -534,8 +534,8 @@
 
       .accommodation-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 35px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px;
         max-width: 1500px;
         margin: 0 auto;
       }
@@ -614,7 +614,7 @@
 
       .restaurants-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
         gap: 30px;
         max-width: 1200px;
         margin: 0 auto;
@@ -710,8 +710,8 @@
     <header class="cover-header">
       <h1 class="couple-name">Miquel & Ruth</h1>
       <div class="photo-grid">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczMzR5Ln3recfVEqtSJKKf2zV7yyZwDmb2n556WglM1DNX7j4NjMSCixgn3sRWgDgO7XGnkphFyCrK2wK154uq8-pgyiayTJUQDq7Vayj7auGSi04AIiRXsOoYHoqJyCZvjK6T8A0G8J0aAUntsElHQs=w1230-h1640-s-no?authuser=0" alt="Foto de Miquel y Ruth" />
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczPHeP7i4a2yRC-T-BFSWXQqlE7SvnZwETO0m7nhINiZQlkjiJAFRHGAhpwIj4ckYUFxOxMmmdvRAtZwFKj-kKly4LvJz1Fd5nR8fTh2XrgdQ0Ex4Y9o0joTHa7ylliD3wXlPxCOZ6qtD_zljocMZWTX=w683-h911-s-no-gm?authuser=0" alt="Foto de Miquel y Ruth" />
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMBYmyCJzsO60j5kXzA5yEaOmrPGRiB7oBFUOPjUztyf2IsPdMYIZQgNJpkXEDrDK6kLEBAV0tK9kRKFJhfTE6LOTamehwNCzaIJdpXKm2b-yEiVx2dD7LYD-h-Wk6vjt2xLCr-BAtCv8uxXdJEt9n4=w1168-h1556-s-no-gm?authuser=0" alt="Foto de Miquel y Ruth" />
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNFMX-DBT9RoG8TFHM23QMXTHBLxAlCaHkGKmdJ5vIl-ucy8UQ-h3RP-bEmR4G1Kgd3J2W67ZUuUikQ3BQC6mPjmz8Qe6-ya36NpePQEQAmasIEQnu_ZJDpZPsgVj8VwN7Lp26vQJPUo-tl6gWFC0og=w2074-h1556-s-no-gm?authuser=0" alt="Foto de Miquel y Ruth" />
         <img src="https://lh3.googleusercontent.com/pw/AP1GczMvJME1iODseZgwLjnmTyKo5Mwd-_c9spjWHK7Re7wK50Q3CBXBKCKgKMraAo55era-lXghmSIgdbzF6EaM1cTxiRvhlHG7i0eQURwfINEQlYF41NK_aBY5ULf08sjTwvjdEUulMJpRZbNLdaZ6u-k3=w1230-h1640-s-no?authuser=0" alt="Foto de Miquel y Ruth" />
         <img src="https://lh3.googleusercontent.com/pw/AP1GczOfDLTDh6FrXQjo7aaaxImaRPciz2A1BQN3wLmUbRpclHJUINRrviS9AMrRf42YYsoLLYlhdgA2_9ZR2-xbo5FM3kGm5LNHHO8qGJ5a0gnd-IrZ7v0K-gxrbVO3DatDRuYDqeF7_F8lLxt2y1Gypxas=w1230-h1640-s-no?authuser=0" alt="Foto de Miquel y Ruth" />
       </div>
@@ -853,31 +853,104 @@
 
     <section class="accommodation-section" id="hoteles">
       <h2 class="accommodation-title">¿Donde alojarse?</h2>
+    
       <div class="accommodation-grid">
+    
         <div class="accommodation-card">
           <h3>HOTEL SANTA EULALIA</h3>
           <p class="card-city">PUERTOLLANO</p>
-          <img src="https://www.hotelsantaeulaliapuertollano.es/wp-content/uploads/hotel13.png" alt="Hotel Santa Eulalia" class="card-photo" />
-          <a href="https://maps.google.com/?q=Hotel+Santa+Eulalia+Puertollano" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
+    
+          <img
+            src="https://www.hotelsantaeulaliapuertollano.es/wp-content/uploads/hotel13.png"
+            alt="Hotel Santa Eulalia"
+            class="card-photo"
+          />
+    
+          <a
+            href="https://maps.google.com/?q=Hotel+Santa+Eulalia+Puertollano"
+            class="card-btn"
+            target="_blank"
+          >
+            ¿CÓMO LLEGAR?
+          </a>
         </div>
+    
         <div class="accommodation-card">
           <h3>HOTEL PUERTOLLANO</h3>
           <p class="card-city">PUERTOLLANO</p>
-          <img src="https://dam.melia.com/melia/accounts/f8/4000018/projects/127/assets/45/94733/6afeb373ff25fc4cc7041a607ada7bf5-1651652173.jpg?im=RegionOfInterestCrop=(360,240),regionOfInterest=(1476.5,980.5)" alt="Hotel Puertollano" class="card-photo" />
-          <a href="https://maps.google.com/?q=Hotel+Puertollano+Melia+Puertollano" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
+    
+          <img
+            src="https://dam.melia.com/melia/accounts/f8/4000018/projects/127/assets/45/94733/6afeb373ff25fc4cc7041a607ada7bf5-1651652173.jpg?im=RegionOfInterestCrop=(360,240),regionOfInterest=(1476.5,980.5)"
+            alt="Hotel Puertollano"
+            class="card-photo"
+          />
+    
+          <a
+            href="https://maps.google.com/?q=Hotel+Puertollano+Melia+Puertollano"
+            class="card-btn"
+            target="_blank"
+          >
+            ¿CÓMO LLEGAR?
+          </a>
         </div>
+    
+        <div class="accommodation-card">
+          <h3>ESCUDEROS HOTEL CRUZ</h3>
+          <p class="card-city">PUERTOLLANO</p>
+    
+          <img
+            src="http://www.losescuderos.com/css/estilos_2011/hotel/rooms/habitacion_servicio_hotel_los_escuderos.jpg"
+            alt="Escuderos Hotel Cruz"
+            class="card-photo"
+          />
+    
+          <a
+            href="https://www.google.com/maps/place/Escuderos+Hotel+Cruz/"
+            class="card-btn"
+            target="_blank"
+          >
+            ¿CÓMO LLEGAR?
+          </a>
+        </div>
+    
         <div class="accommodation-card">
           <h3>NH HOTEL</h3>
           <p class="card-city">CIUDAD REAL</p>
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczOLx53TahHy4InJgJkQweOqBcJclbzcPYkC1CvZBRR3sp1sTEzNWyTPItd6PWQN7HOKMX9VVDmuuwyUbbVRjyxbk95dZ0gMaHgT6zD56Jmjut3TTBYULP0hayYqqIra6kzjnmYwYbHWU_lFdGP3lFmL=w1530-h762-s-no-gm?authuser=0" alt="NH Hotel Ciudad Real" class="card-photo" />
-          <a href="https://maps.google.com/?q=NH+Hotel+Ciudad+Real" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
+    
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczOLx53TahHy4InJgJkQweOqBcJclbzcPYkC1CvZBRR3sp1sTEzNWyTPItd6PWQN7HOKMX9VVDmuuwyUbbVRjyxbk95dZ0gMaHgT6zD56Jmjut3TTBYULP0hayYqqIra6kzjnmYwYbHWU_lFdGP3lFmL=w1530-h762-s-no-gm?authuser=0"
+            alt="NH Hotel Ciudad Real"
+            class="card-photo"
+          />
+    
+          <a
+            href="https://maps.google.com/?q=NH+Hotel+Ciudad+Real"
+            class="card-btn"
+            target="_blank"
+          >
+            ¿CÓMO LLEGAR?
+          </a>
         </div>
+    
         <div class="accommodation-card">
           <h3>HOTEL ALFONSO X</h3>
           <p class="card-city">CIUDAD REAL</p>
-          <img src="https://lh3.googleusercontent.com/pw/AP1GczNL_cCtqwJM3EjaH8ge3k3JqLdM_EGlIRwt9nodTl395Fy3r1jW1OKs41IEsLbQfwhx2iraypqIchGRuy_7QgjW2zPosdA228wA3zwn7FjBkOLQV01EqxZ8i9GiffB0b1UvVYE2vY1Ira4aeOoMV1zA=w1650-h1098-s-no-gm?authuser=0" alt="Hotel Alfonso X Ciudad Real" class="card-photo" />
-          <a href="https://maps.google.com/?q=Eurostars+Rey+Alfonso+X+Ciudad+Real" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
+    
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczNL_cCtqwJM3EjaH8ge3k3JqLdM_EGlIRwt9nodTl395Fy3r1jW1OKs41IEsLbQfwhx2iraypqIchGRuy_7QgjW2zPosdA228wA3zwn7FjBkOLQV01EqxZ8i9GiffB0b1UvVYE2vY1Ira4aeOoMV1zA=w1650-h1098-s-no-gm"
+            alt="Hotel Alfonso X Ciudad Real"
+            class="card-photo"
+          />
+    
+          <a
+            href="https://maps.google.com/?q=Eurostars+Rey+Alfonso+X+Ciudad+Real"
+            class="card-btn"
+            target="_blank"
+          >
+            ¿CÓMO LLEGAR?
+          </a>
         </div>
+    
       </div>
     </section>
 
