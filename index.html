@@ -121,23 +121,24 @@
         min-height: 500px;
       }
 
-      .details-video-wrapper {
+      /* PHOTO instead of video */
+      .details-photo-wrapper {
         width: 50%;
         flex-shrink: 0;
         position: relative;
         overflow: hidden;
-        min-height: 550px;
+        min-height: 500px;
       }
 
-      .details-video-wrapper video,
-      .details-video-wrapper iframe {
+      .details-photo-wrapper img {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 177.78%;
-        height: 177.78%;
-        transform: translate(-50%, -50%);
-        border: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
       }
 
       .details-content {
@@ -249,7 +250,6 @@
       }
 
       .details-card-border { display: none; }
-      .details-photo { display: none; }
       .buttons-container {
         display: flex;
         flex-direction: column;
@@ -422,6 +422,32 @@
         font-family: 'Lexend Deca', serif;
         font-size: 2.4em;
         font-weight: bold;
+        word-break: break-all;
+        max-width: 90%;
+      }
+
+      /* Copy IBAN button */
+      .copy-iban-btn {
+        margin-top: 16px;
+        background-color: transparent;
+        color: white;
+        border: 2px solid white;
+        border-radius: 30px;
+        padding: 12px 28px;
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 0.9em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .copy-iban-btn:hover {
+        background-color: rgba(255,255,255,0.15);
+      }
+
+      .copy-iban-btn.copied {
+        background-color: rgba(255,255,255,0.25);
       }
 
       /* --- FAQ --- */
@@ -449,7 +475,6 @@
         margin-bottom: 0px;
       }
 
-      /* Nueva imagen izquierda inferior */
       .faq-image-bottom-left {
         width: 320px;
         height: auto;
@@ -460,7 +485,6 @@
         z-index: 1;
       }
 
-      /* Foto arriba a la derecha (se mantiene) */
       .faq-image-top-right {
         width: 300px;
         height: auto;
@@ -671,14 +695,27 @@
         .couple-name { font-size: 3em; }
         .photo-grid img { width: 150px; height: 150px; }
         .tagline { font-size: 3em; top: -30px; white-space: nowrap; }
+
+        /* Photo on mobile: full width, fixed height */
         .details-card { flex-direction: column; }
-        .details-video-wrapper { width: 100%; min-height: 0; height: 0; padding-bottom: 56.25%; position: relative; }
-        .details-video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: none; }
-        .details-content { width: 100%; padding: 40px 20px; gap: 24px; min-height: 250px; }
+        .details-photo-wrapper {
+          width: 100%;
+          min-height: 0;
+          height: 280px;
+          position: relative;
+        }
+        .details-photo-wrapper img {
+          position: absolute;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          object-fit: cover;
+          object-position: center top;
+        }
+
+        .details-content { width: 100%; padding: 40px 20px; gap: 24px; min-height: 250px; box-sizing: border-box; }
         .details-venue-name { font-size: 2.2em; }
         .details-time { font-size: 1.2em; flex-wrap: wrap; justify-content: center; }
         .bus-buttons-row { flex-direction: column; align-items: center; }
-        .details-photo { display: none; }
         .form-section { padding: 40px 24px; }
         .form-image-container { flex-direction: column; gap: 20px; }
         .form-image { position: relative; top: 0; left: 0; width: 50%; }
@@ -686,8 +723,19 @@
         .form-wrapper { width: 100%; }
         .form-section-title { font-size: 1.8em; }
         .contact-form { max-width: 100%; }
-        .iban-title, .iban-title-font { font-size: 2.5em; }
-        .iban-text, .iban-number { font-size: 1.5em; }
+
+        /* IBAN mobile fixes */
+        .iban-section { height: auto; min-height: 500px; }
+        .iban-title, .iban-title-font { font-size: 2em; }
+        .iban-text { font-size: 1.1em; margin: 12px 0 4px; }
+        .iban-number {
+          font-size: 1.3em;
+          word-break: break-all;
+          letter-spacing: 1px;
+          line-height: 1.5;
+          max-width: 95%;
+        }
+
         .faq-image-bottom-left, .faq-image-top-right { display: none; }
         .faq-section { padding: 40px 24px; }
         .faq-title { font-size: 2.2em; margin-bottom: 10px; }
@@ -725,8 +773,12 @@
 
     <section class="details-section">
       <div class="details-card">
-        <div class="details-video-wrapper">
-          <iframe src="https://www.youtube.com/embed/xjTXpOHwmZM?autoplay=1&mute=1&loop=1&playlist=xjTXpOHwmZM&controls=0&showinfo=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <!-- FOTO en lugar de vídeo -->
+        <div class="details-photo-wrapper">
+          <img
+            src="https://lh3.googleusercontent.com/pw/AP1GczOMBRdDLmSitcfWf8e7Yusym25h086seAvzDWJ1voJ1owGy7gH1fQnR4fmTKx8n_QJP5ctVDZ8wuqyX3Vrwp-fhBv3PyxDFI0afFeKWj_sFMypbsGvdyn0LrD5Qcn1dg1yBk5OLSGRMalV5fIwqqh4X=w1024-h1024-s-no-gm?authuser=0"
+            alt="Miquel y Ruth"
+          />
         </div>
         <div class="details-content">
           <p class="details-label">Ubicación</p>
@@ -765,12 +817,22 @@
               <input type="text" id="name" name="name" placeholder="NOMBRE Y APELLIDO" required />
             </div>
             <div class="form-field">
-              <label for="autobus" class="sr-only">¿Necesitas bus?</label>
+              <label for="autobus" class="sr-only">¿Necesitas bus de ida?</label>
               <select id="autobus" name="autobus">
-                <option value="" disabled selected>BUS</option>
+                <option value="" disabled selected>BUS IDA</option>
                 <option value="puertollano">SÍ, desde PUERTOLLANO (17:30h)</option>
                 <option value="ciudadreal">SÍ, desde CIUDAD REAL (18h)</option>
                 <option value="no">NO, iré por mi cuenta</option>
+              </select>
+            </div>
+            <!-- NUEVO: Bus de vuelta -->
+            <div class="form-field">
+              <label for="autobus-vuelta" class="sr-only">¿Necesitas bus de vuelta?</label>
+              <select id="autobus-vuelta" name="autobus-vuelta">
+                <option value="" disabled selected>BUS VUELTA</option>
+                <option value="2am">🌙 BUS 2 AM</option>
+                <option value="530am">🌅 BUS 5:30 AM</option>
+                <option value="no">NO, vuelvo por mi cuenta</option>
               </select>
             </div>
             <div class="form-field">
@@ -799,6 +861,7 @@
         <h2 class="iban-title iban-title-font">Tenerte en este día tan especial, no tiene precio! :)</h2>
         <p class="iban-text">Si además quieres tener un detalle con nosotros, te dejamos nuestro número de cuenta:</p>
         <p class="iban-number">ES00 0000 0000 0000 0000 0000</p>
+        <button class="copy-iban-btn" onclick="copyIBAN(this)">📋 COPIAR IBAN</button>
       </div>
     </section>
 
@@ -845,9 +908,7 @@
         </div>
       </div>
 
-      <!-- Nueva imagen abajo a la izquierda -->
       <img src="https://lh3.googleusercontent.com/pw/AP1GczP81J30de7OAHdjJVT1BNP8rfMOrGaVQ_9qa--WhrGdcqShRP1DRKEBWvycxtucVuzJ8O01ZT5hPsWofKEeTklNaNpot2ioI-WjOIF2tsYUWPi7DqUK0mKIu-wM1tjnKQwIHfikr8LHadQTKcuIWbV-=w1200-h857-s-no-gm?authuser=0" alt="Decoración" class="faq-image-bottom-left" />
-      <!-- Foto arriba a la derecha (se mantiene) -->
       <img src="https://lh3.googleusercontent.com/pw/AP1GczOt6APWWHBIUsdYsp7f7id5DAU2kEyYZLyclIkBJbinDoZpelbBfPvdN3qFDnZMe0D6I6yOWV3swoO43WsQOlJH7CyPJJdqOG6D86bXipYniDAt7fTSnDGTcKaKpfQDAsLZoBo3Y_xWzSjXZrjokv8d=w736-h933-s-no-gm?authuser=0" alt="Decoración" class="faq-image-top-right" />
     </section>
 
@@ -859,96 +920,36 @@
         <div class="accommodation-card">
           <h3>HOTEL SANTA EULALIA</h3>
           <p class="card-city">PUERTOLLANO</p>
-    
-          <img
-            src="https://www.hotelsantaeulaliapuertollano.es/wp-content/uploads/hotel13.png"
-            alt="Hotel Santa Eulalia"
-            class="card-photo"
-          />
-    
-          <a
-            href="https://maps.google.com/?q=Hotel+Santa+Eulalia+Puertollano"
-            class="card-btn"
-            target="_blank"
-          >
-            ¿CÓMO LLEGAR?
-          </a>
+          <img src="https://www.hotelsantaeulaliapuertollano.es/wp-content/uploads/hotel13.png" alt="Hotel Santa Eulalia" class="card-photo" />
+          <a href="https://maps.google.com/?q=Hotel+Santa+Eulalia+Puertollano" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
         </div>
     
         <div class="accommodation-card">
           <h3>HOTEL PUERTOLLANO</h3>
           <p class="card-city">PUERTOLLANO</p>
-    
-          <img
-            src="https://dam.melia.com/melia/accounts/f8/4000018/projects/127/assets/45/94733/6afeb373ff25fc4cc7041a607ada7bf5-1651652173.jpg?im=RegionOfInterestCrop=(360,240),regionOfInterest=(1476.5,980.5)"
-            alt="Hotel Puertollano"
-            class="card-photo"
-          />
-    
-          <a
-            href="https://maps.google.com/?q=Hotel+Puertollano+Melia+Puertollano"
-            class="card-btn"
-            target="_blank"
-          >
-            ¿CÓMO LLEGAR?
-          </a>
+          <img src="https://dam.melia.com/melia/accounts/f8/4000018/projects/127/assets/45/94733/6afeb373ff25fc4cc7041a607ada7bf5-1651652173.jpg?im=RegionOfInterestCrop=(360,240),regionOfInterest=(1476.5,980.5)" alt="Hotel Puertollano" class="card-photo" />
+          <a href="https://maps.google.com/?q=Hotel+Puertollano+Melia+Puertollano" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
         </div>
     
         <div class="accommodation-card">
           <h3>ESCUDEROS HOTEL CRUZ</h3>
           <p class="card-city">PUERTOLLANO</p>
-    
-          <img
-            src="http://www.losescuderos.com/css/estilos_2011/hotel/rooms/habitacion_servicio_hotel_los_escuderos.jpg"
-            alt="Escuderos Hotel Cruz"
-            class="card-photo"
-          />
-    
-          <a
-            href="https://www.google.com/maps/place/Escuderos+Hotel+Cruz/"
-            class="card-btn"
-            target="_blank"
-          >
-            ¿CÓMO LLEGAR?
-          </a>
+          <img src="http://www.losescuderos.com/css/estilos_2011/hotel/rooms/habitacion_servicio_hotel_los_escuderos.jpg" alt="Escuderos Hotel Cruz" class="card-photo" />
+          <a href="https://www.google.com/maps/place/Escuderos+Hotel+Cruz/" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
         </div>
     
         <div class="accommodation-card">
           <h3>NH HOTEL</h3>
           <p class="card-city">CIUDAD REAL</p>
-    
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczOLx53TahHy4InJgJkQweOqBcJclbzcPYkC1CvZBRR3sp1sTEzNWyTPItd6PWQN7HOKMX9VVDmuuwyUbbVRjyxbk95dZ0gMaHgT6zD56Jmjut3TTBYULP0hayYqqIra6kzjnmYwYbHWU_lFdGP3lFmL=w1530-h762-s-no-gm?authuser=0"
-            alt="NH Hotel Ciudad Real"
-            class="card-photo"
-          />
-    
-          <a
-            href="https://maps.google.com/?q=NH+Hotel+Ciudad+Real"
-            class="card-btn"
-            target="_blank"
-          >
-            ¿CÓMO LLEGAR?
-          </a>
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczOLx53TahHy4InJgJkQweOqBcJclbzcPYkC1CvZBRR3sp1sTEzNWyTPItd6PWQN7HOKMX9VVDmuuwyUbbVRjyxbk95dZ0gMaHgT6zD56Jmjut3TTBYULP0hayYqqIra6kzjnmYwYbHWU_lFdGP3lFmL=w1530-h762-s-no-gm?authuser=0" alt="NH Hotel Ciudad Real" class="card-photo" />
+          <a href="https://maps.google.com/?q=NH+Hotel+Ciudad+Real" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
         </div>
     
         <div class="accommodation-card">
           <h3>HOTEL ALFONSO X</h3>
           <p class="card-city">CIUDAD REAL</p>
-    
-          <img
-            src="https://lh3.googleusercontent.com/pw/AP1GczNL_cCtqwJM3EjaH8ge3k3JqLdM_EGlIRwt9nodTl395Fy3r1jW1OKs41IEsLbQfwhx2iraypqIchGRuy_7QgjW2zPosdA228wA3zwn7FjBkOLQV01EqxZ8i9GiffB0b1UvVYE2vY1Ira4aeOoMV1zA=w1650-h1098-s-no-gm"
-            alt="Hotel Alfonso X Ciudad Real"
-            class="card-photo"
-          />
-    
-          <a
-            href="https://maps.google.com/?q=Eurostars+Rey+Alfonso+X+Ciudad+Real"
-            class="card-btn"
-            target="_blank"
-          >
-            ¿CÓMO LLEGAR?
-          </a>
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczNL_cCtqwJM3EjaH8ge3k3JqLdM_EGlIRwt9nodTl395Fy3r1jW1OKs41IEsLbQfwhx2iraypqIchGRuy_7QgjW2zPosdA228wA3zwn7FjBkOLQV01EqxZ8i9GiffB0b1UvVYE2vY1Ira4aeOoMV1zA=w1650-h1098-s-no-gm" alt="Hotel Alfonso X Ciudad Real" class="card-photo" />
+          <a href="https://maps.google.com/?q=Eurostars+Rey+Alfonso+X+Ciudad+Real" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
         </div>
     
       </div>
@@ -973,6 +974,7 @@
     </section>
 
     <script>
+      // Accordion
       const accordionHeaders = document.querySelectorAll('.accordion-header');
       accordionHeaders.forEach((header) => {
         header.addEventListener('click', () => {
@@ -989,6 +991,33 @@
           }
         });
       });
+
+      // Copy IBAN
+      function copyIBAN(btn) {
+        const iban = 'ES00 0000 0000 0000 0000 0000';
+        navigator.clipboard.writeText(iban).then(() => {
+          btn.textContent = '✅ COPIADO!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = '📋 COPIAR IBAN';
+            btn.classList.remove('copied');
+          }, 2500);
+        }).catch(() => {
+          // Fallback for older browsers
+          const el = document.createElement('textarea');
+          el.value = iban;
+          document.body.appendChild(el);
+          el.select();
+          document.execCommand('copy');
+          document.body.removeChild(el);
+          btn.textContent = '✅ COPIADO!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = '📋 COPIAR IBAN';
+            btn.classList.remove('copied');
+          }, 2500);
+        });
+      }
     </script>
   </body>
 </html>
