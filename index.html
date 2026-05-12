@@ -66,6 +66,7 @@
         position: relative;
         top: -40px;
         z-index: 1;
+        margin-bottom: -10px;
       }
 
       .nav-buttons {
@@ -73,7 +74,7 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 14px;
-        margin: 10px 0 30px;
+        margin: 0px 0 30px;
       }
 
       .nav-button {
@@ -117,37 +118,39 @@
         margin: 0 auto;
         position: relative;
         display: flex;
-        align-items: stretch;
+        align-items: center;
         min-height: 500px;
+        padding: 40px 60px;
+        box-sizing: border-box;
+        gap: 40px;
       }
 
-      /* PHOTO instead of video */
+      /* PHOTO floated left, natural size */
       .details-photo-wrapper {
-        width: 50%;
         flex-shrink: 0;
-        position: relative;
-        overflow: hidden;
-        min-height: 500px;
+        width: auto;
+        max-width: 500px;
+        background-color: transparent;
+        overflow: visible;
+        min-height: unset;
       }
 
       .details-photo-wrapper img {
-        position: absolute;
-        top: 0;
-        left: 0;
+        position: static;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+        height: auto;
+        max-height: 600px;
+        object-fit: contain;
         display: block;
       }
 
       .details-content {
-        width: 50%;
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
-        padding: 60px 80px;
+        justify-content: center;
+        padding: 40px 60px;
         box-sizing: border-box;
         text-align: center;
         gap: 20px;
@@ -376,13 +379,23 @@
         width: 100%;
         height: 600px;
         overflow: hidden;
+        background-image: url('https://lh3.googleusercontent.com/pw/AP1GczPVA29zOifDHM2TJT_apYll6gkC64-5jiQ5jK2w1TCEq5ZGTu0uPXrrRPa-UKQ5xbjA7bDVt5w7V-DvBzASo8il8Wr1N_QwkUJJMDhIlU2zrJqILDcMg7GyVLr_UgvsOs0GPugLEOxB8s7AnhB1yMwj=w1920-h1080-s-no-gm?authuser=0');
+        background-size: cover;
+        background-position: center;
       }
 
       .iban-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: blur(3px);
+        display: none;
+      }
+
+      .iban-section::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: inherit;
+        filter: blur(4px);
+        transform: scale(1.05);
+        z-index: 0;
       }
 
       .iban-text-container {
@@ -398,6 +411,7 @@
         color: white;
         padding: 20px;
         box-sizing: border-box;
+        z-index: 1;
       }
 
       .iban-title {
@@ -696,20 +710,21 @@
         .photo-grid img { width: 150px; height: 150px; }
         .tagline { font-size: 3em; top: -30px; white-space: nowrap; }
 
-        /* Photo on mobile: full width, fixed height */
+        /* Photo on mobile: full width, fixed height, contain */
         .details-card { flex-direction: column; }
         .details-photo-wrapper {
           width: 100%;
           min-height: 0;
-          height: 280px;
+          height: 320px;
           position: relative;
+          background-color: #e8ddd0;
         }
         .details-photo-wrapper img {
           position: absolute;
           top: 0; left: 0;
           width: 100%; height: 100%;
-          object-fit: cover;
-          object-position: center top;
+          object-fit: contain;
+          object-position: center;
         }
 
         .details-content { width: 100%; padding: 40px 20px; gap: 24px; min-height: 250px; box-sizing: border-box; }
@@ -718,14 +733,14 @@
         .bus-buttons-row { flex-direction: column; align-items: center; }
         .form-section { padding: 40px 24px; }
         .form-image-container { flex-direction: column; gap: 20px; }
-        .form-image { position: relative; top: 0; left: 0; width: 50%; }
+        .form-image { position: relative; top: 0; left: 0; width: 120px; height: 120px; object-fit: cover; border-radius: 50%; margin: 0 auto 10px; display: block; }
         .form-image-right { display: none; }
         .form-wrapper { width: 100%; }
         .form-section-title { font-size: 1.8em; }
         .contact-form { max-width: 100%; }
 
         /* IBAN mobile fixes */
-        .iban-section { height: auto; min-height: 500px; }
+        .iban-section { height: auto; min-height: 480px; background-size: cover; }
         .iban-title, .iban-title-font { font-size: 2em; }
         .iban-text { font-size: 1.1em; margin: 12px 0 4px; }
         .iban-number {
@@ -856,7 +871,7 @@
     </section>
 
     <section class="iban-section">
-      <img src="https://lh3.googleusercontent.com/pw/AP1GczPVA29zOifDHM2TJT_apYll6gkC64-5jiQ5jK2w1TCEq5ZGTu0uPXrrRPa-UKQ5xbjA7bDVt5w7V-DvBzASo8il8Wr1N_QwkUJJMDhIlU2zrJqILDcMg7GyVLr_UgvsOs0GPugLEOxB8s7AnhB1yMwj=w1920-h1080-s-no-gm?authuser=0" alt="Foto de Miquel y Ruth" class="iban-image" />
+      <img src="https://lh3.googleusercontent.com/pw/AP1GczPVA29zOifDHM2TJT_apYll6gkC64-5jiQ5jK2w1TCEq5ZGTu0uPXrrRPa-UKQ5xbjA7bDVt5w7V-DvBzASo8il8Wr1N_QwkUJJMDhIlU2zrJqILDcMg7GyVLp_UgvsOs0GPugLEOxB8s7AnhB1yMwj=w1920-h1080-s-no-gm?authuser=0" alt="Foto de Miquel y Ruth" class="iban-image" />
       <div class="iban-text-container">
         <h2 class="iban-title iban-title-font">Tenerte en este día tan especial, no tiene precio! :)</h2>
         <p class="iban-text">Si además quieres tener un detalle con nosotros, te dejamos nuestro número de cuenta:</p>
@@ -934,7 +949,7 @@
         <div class="accommodation-card">
           <h3>ESCUDEROS HOTEL CRUZ</h3>
           <p class="card-city">PUERTOLLANO</p>
-          <img src="http://www.losescuderos.com/css/estilos_2011/hotel/rooms/habitacion_servicio_hotel_los_escuderos.jpg" alt="Escuderos Hotel Cruz" class="card-photo" />
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/114679085.jpg?k=e74c82f62ab7c86a2fdf96a0b0efd8e6b80b88abc8b0e3d9e5ef0c77ea7e02ee&o=&hp=1" alt="Escuderos Hotel Cruz" class="card-photo" onerror="this.src='https://lh3.googleusercontent.com/pw/AP1GczOLx53TahHy4InJgJkQweOqBcJclbzcPYkC1CvZBRR3sp1sTEzNWyTPItd6PWQN7HOKMX9VVDmuuwyUbbVRjyxbk95dZ0gMaHgT6zD56Jmjut3TTBYULP0hayYqqIra6kzjnmYwYbHWU_lFdGP3lFmL=w1530-h762-s-no-gm?authuser=0'" />
           <a href="https://www.google.com/maps/place/Escuderos+Hotel+Cruz/" class="card-btn" target="_blank">¿CÓMO LLEGAR?</a>
         </div>
     
