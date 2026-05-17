@@ -98,7 +98,7 @@
       /* --- SEGUNDA SECCIÓN --- */
       .details-section {
         width: 100%;
-        padding: 50px 0;
+        padding: 20px 0;
         background-color: #5f7d68;
         color: #f5ecde;
         text-align: center;
@@ -109,38 +109,34 @@
           #f5ecde 20px,
           #f5ecde 40px
         );
+        box-sizing: border-box;
       }
 
       .details-card {
         background-color: #f5ecde;
         color: #5f7d68;
-        max-width: 100%;
+        width: 100%;
         margin: 0 auto;
         position: relative;
         display: flex;
-        align-items: center;
-        min-height: 500px;
-        padding: 40px 60px;
+        align-items: stretch;
         box-sizing: border-box;
-        gap: 40px;
       }
 
-      /* PHOTO floated left, natural size */
+      /* PHOTO side */
       .details-photo-wrapper {
         flex-shrink: 0;
-        width: auto;
-        max-width: 500px;
-        background-color: transparent;
-        overflow: visible;
-        min-height: unset;
+        width: 42%;
+        max-width: 580px;
+        align-self: stretch;
+        overflow: hidden;
       }
 
       .details-photo-wrapper img {
-        position: static;
         width: 100%;
-        height: auto;
-        max-height: 600px;
-        object-fit: contain;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
         display: block;
       }
 
@@ -150,7 +146,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 40px 60px;
+        padding: 60px 80px 60px 60px;
         box-sizing: border-box;
         text-align: center;
         gap: 20px;
@@ -233,7 +229,9 @@
       }
 
       .bus-button {
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         font-family: 'Lexend Deca', sans-serif;
         font-size: 0.75em;
         letter-spacing: 0.5px;
@@ -710,24 +708,20 @@
         .photo-grid img { width: 150px; height: 150px; }
         .tagline { font-size: 3em; top: -30px; white-space: nowrap; }
 
-        /* Photo on mobile: full width, fixed height, contain */
         .details-card { flex-direction: column; }
         .details-photo-wrapper {
           width: 100%;
-          min-height: 0;
-          height: 320px;
-          position: relative;
-          background-color: #e8ddd0;
+          height: 300px;
+          align-self: auto;
         }
         .details-photo-wrapper img {
-          position: absolute;
-          top: 0; left: 0;
-          width: 100%; height: 100%;
-          object-fit: contain;
-          object-position: center;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center top;
         }
 
-        .details-content { width: 100%; padding: 40px 20px; gap: 24px; min-height: 250px; box-sizing: border-box; }
+        .details-content { width: 100%; padding: 30px 20px 40px; gap: 20px; box-sizing: border-box; }
         .details-venue-name { font-size: 2.2em; }
         .details-time { font-size: 1.2em; flex-wrap: wrap; justify-content: center; }
         .bus-buttons-row { flex-direction: column; align-items: center; }
@@ -788,11 +782,10 @@
 
     <section class="details-section">
       <div class="details-card">
-        <!-- FOTO en lugar de vídeo -->
         <div class="details-photo-wrapper">
           <img
             src="https://lh3.googleusercontent.com/pw/AP1GczOMBRdDLmSitcfWf8e7Yusym25h086seAvzDWJ1voJ1owGy7gH1fQnR4fmTKx8n_QJP5ctVDZ8wuqyX3Vrwp-fhBv3PyxDFI0afFeKWj_sFMypbsGvdyn0LrD5Qcn1dg1yBk5OLSGRMalV5fIwqqh4X=w1024-h1024-s-no-gm?authuser=0"
-            alt="Miquel y Ruth"
+            alt="La Mancha - Hacienda la Membrilleja"
           />
         </div>
         <div class="details-content">
@@ -835,18 +828,17 @@
               <label for="autobus" class="sr-only">¿Necesitas bus de ida?</label>
               <select id="autobus" name="autobus">
                 <option value="" disabled selected>BUS IDA</option>
-                <option value="puertollano">SÍ, desde PUERTOLLANO (17:30h)</option>
-                <option value="ciudadreal">SÍ, desde CIUDAD REAL (18h)</option>
-                <option value="no">NO, iré por mi cuenta</option>
+                <option value="puertollano">1️⃣ SÍ, desde PUERTOLLANO (17:30h)</option>
+                <option value="ciudadreal">2️⃣ SÍ, desde CIUDAD REAL (18h)</option>
+                <option value="no">🔴 NO, iré por mi cuenta</option>
               </select>
             </div>
-            <!-- NUEVO: Bus de vuelta -->
             <div class="form-field">
               <label for="autobus-vuelta" class="sr-only">¿Necesitas bus de vuelta?</label>
               <select id="autobus-vuelta" name="autobus-vuelta">
                 <option value="" disabled selected>BUS VUELTA</option>
                 <option value="2am">🌙 BUS 2 AM</option>
-                <option value="530am">🌅 BUS 5:30 AM</option>
+                <option value="530am">🌅 BUS 5 AM</option>
                 <option value="no">NO, vuelvo por mi cuenta</option>
               </select>
             </div>
@@ -890,7 +882,7 @@
               <span class="accordion-icon">+</span>
             </div>
             <div class="accordion-content">
-              <p>Queremos que lo deis TODO y disfrutéis sin límites, así que mejor sin niños.😜 Peeeero… si os hace falta traerlos, ¡ningún problema!</p>
+              <p>Queremos que lo deis TODO por lo que, con mucho cariño, ese día lo hemos pensado para disfrutarse en un ambiente de adultos. 😜 Peeeero… si lo necesitáis, hablad con nosotros!</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -1018,7 +1010,6 @@
             btn.classList.remove('copied');
           }, 2500);
         }).catch(() => {
-          // Fallback for older browsers
           const el = document.createElement('textarea');
           el.value = iban;
           document.body.appendChild(el);
